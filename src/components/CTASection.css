@@ -1,0 +1,81 @@
+.cta-section {
+  padding: 80px 20px;
+}
+
+.cta-box {
+  padding: 80px 40px;
+  border-radius: 40px;
+  text-align: center;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 90, 100, 0.1);
+}
+
+/* Add a subtle background pattern */
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(0, 135, 163, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(0, 90, 100, 0.05) 0%, transparent 40%);
+  z-index: -1;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 25px;
+}
+
+.cta-patient-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.cta-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.cta-avatars img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-left: -15px;
+}
+
+.cta-avatars img:first-child {
+  margin-left: 0;
+}
+
+.cta-patient-info p {
+  font-weight: 600;
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+.cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .cta-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}

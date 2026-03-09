@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors */
+  --primary: #005a64;
+  --secondary: #0087a3;
+  --accent: #ff8c42; /* A subtle accent color if needed, but the design is mostly teal/blue */
+  --bg-light: #f4fafb;
+  --bg-white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-muted: #555555;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --border-color: rgba(0, 90, 100, 0.1);
+  
+  /* Gradients */
+  --gradient-bg: linear-gradient(135deg, #e0f2f1 0%, #f4fafb 100%);
+  --gradient-primary: linear-gradient(90deg, #005a64 0%, #0087a3 100%);
+  
+  /* Styling Extras */
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --border-radius-lg: 24px;
+  --border-radius-md: 16px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  transition: var(--transition);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--secondary);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: rgba(0, 90, 100, 0.05);
+}
