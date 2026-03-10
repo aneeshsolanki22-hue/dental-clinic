@@ -1,9 +1,9 @@
 import React from 'react';
 import { Star, Play, ArrowRight, Clock, UserCheck } from 'lucide-react';
 import './Hero.css';
-import heroImg from '../assets/hero_hitech.png';
-import dr1 from '../assets/dr1.png';
-import dr2 from '../assets/dr2.png';
+import heroImg from '../assets/hero_malik.jpg';
+import dr1 from '../assets/dr_ravi.jpg';
+import dr2 from '../assets/dr_anandita.jpg';
 
 const Hero = () => {
   return (
@@ -15,17 +15,16 @@ const Hero = () => {
         </div>
         
         <h1 className="hero-title">
-          Advanced Digital Dentistry, <br />
-          <span>In The Heart Of Raipur</span>
+          Excellence in Dental Implants <br />
+          <span>& Cosmetic Care, Raipur</span>
         </h1>
         
         <p className="hero-description">
-          Experience Chhattisgarh's first 5D Itero Scanner and precise Laser Dentistry. 
-          Expert care for a brighter, healthier smile.
+          28 Years of Clinical Excellence. Advanced Dental Implants and 
+          Aesthetic Dentistry for a confident, healthy smile.
         </p>
         
         <div className="hero-btns">
-          <button className="btn btn-primary">Book Appointment</button>
           <button className="btn btn-outline-hero">
             <div className="play-icon"><Play size={14} fill="currentColor" /></div>
             Get Started Today
@@ -67,12 +66,12 @@ const Hero = () => {
           
           <div className="stats-overlay glass">
             <div className="stat-item">
-              <h3>200+</h3>
-              <p>Expert Doctors</p>
+              <h3>31+</h3>
+              <p>Years Experience</p>
             </div>
             <div className="stat-item">
-              <h3>400+</h3>
-              <p>Recover Patient</p>
+              <h3>5000+</h3>
+              <p>Happy Patients</p>
             </div>
             <div className="stat-item">
               <h3>98%</h3>

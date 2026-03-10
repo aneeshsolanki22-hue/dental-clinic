@@ -1,6 +1,7 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import './Footer.css';
+import logo from '../assets/logo_malik.jpg';
 
 const Footer = () => {
   return (
@@ -8,23 +9,14 @@ const Footer = () => {
       <div className="container footer-container">
         <div className="footer-brand">
           <div className="logo white">
-            <div className="logo-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L4 6V11C4 16.5 7.5 21.5 12 23C16.5 21.5 20 16.5 20 11V6L12 2Z" fill="#ffffff"/>
-                <path d="M12 5V19M12 5L9 8M12 5L15 8" stroke="#005a64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <span>Hi-Tech Dental Care</span>
+            <img src={logo} alt="Malik Dental Clinic" className="logo-img" />
+            <span>Malik Dental Clinic</span>
           </div>
-          <p className="footer-tagline">Chhattisgarh's First 5D Itero Scanner Studio. <br /> Katora Talab, Raipur.</p>
+          <p className="footer-tagline">Clinical Excellence in Prosthodontics & Implants. <br /> Shanker Nagar, Raipur.</p>
           <p className="footer-address" style={{fontSize: '0.85rem', marginBottom: '20px', opacity: 0.7}}>
-            Opposite IDBI Bank, Katora Talab Main Rd, <br />
-            Rajendra Nagar, Raipur, Chhattisgarh 492001
+            Shop No 4, Block No C, Vineet Estates, <br />
+            Shanker Nagar, Raipur, Chhattisgarh 492004
           </p>
-          <div className="newsletter">
-            <input type="email" placeholder="Email Address" />
-            <button className="subscribe-btn">Subscribe</button>
-          </div>
           <div className="social-links">
             <button className="social-btn"><Facebook size={18} /></button>
             <button className="social-btn"><Twitter size={18} /></button>
@@ -41,7 +33,6 @@ const Footer = () => {
               <li><a href="#">About</a></li>
               <li><a href="#">Services</a></li>
               <li><a href="#">Doctors</a></li>
-              <li><a href="#">Appointments</a></li>
             </ul>
           </div>
           
@@ -68,10 +59,9 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom container">
-        <p>Privacy Policy | Terms & Condition | Cookies Settings</p>
+        <p>Privacy Policy | Terms & Condition | Created by Toukir Solanki</p>
       </div>
       
-      <div className="footer-bg-text">Denty</div>
     </footer>
   );
 };

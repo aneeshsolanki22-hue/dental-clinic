@@ -1,14 +1,14 @@
 import React from 'react';
-import { ChevronRight, Video, ShieldCheck, Clock, Phone, Mic, PhoneOff } from 'lucide-react';
+import { ChevronRight, Video, ShieldCheck, Clock, Mic, PhoneOff } from 'lucide-react';
 import './Features.css';
-import consultationImg from '../assets/consultation.png';
+import consultationImg from '../assets/consultation_malik.jpg';
 
 const Features = () => {
   const featureList = [
-    "5D Itero Scan",
-    "Laser Dentistry",
-    "Digital Smile Design",
-    "Expert Oral Surgery"
+    "Dental Implants",
+    "Cosmetic Dentistry",
+    "Full Mouth Rehab",
+    "Laser RCT & Surgery"
   ];
 
   return (

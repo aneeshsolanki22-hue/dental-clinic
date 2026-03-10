@@ -10,58 +10,48 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 60px;
-  position: relative;
+  text-align: center;
 }
 
 .carousel-controls {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  gap: 15px;
-}
-
-.carousel-btn {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 1.5px solid var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-}
-
-.carousel-btn.next {
-  background: var(--primary);
-  color: white;
+  display: none; /* Hidden since we only have 2 doctors now */
 }
 
 .doctors-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.central-grid {
+  justify-content: center;
 }
 
 .doctor-card {
   background: white;
-  padding: 15px;
-  border-radius: 30px;
+  padding: 20px;
+  border-radius: 35px;
   text-align: left;
   transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  width: 400px;
 }
 
 .doctor-card:hover, .doctor-card.active {
   background: var(--primary);
   color: white;
+  transform: translateY(-10px);
 }
 
 .doctor-image {
   position: relative;
-  border-radius: 24px;
+  border-radius: 28px;
   overflow: hidden;
-  height: 300px;
-  margin-bottom: 20px;
+  height: 380px;
+  margin-bottom: 25px;
 }
 
 .doctor-image img {
@@ -74,8 +64,8 @@
   position: absolute;
   bottom: 15px;
   right: 15px;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   background: white;
   color: var(--primary);
@@ -93,18 +83,31 @@
 }
 
 .doctor-info h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.doc-specialty {
+  font-size: 0.95rem;
+  opacity: 0.9;
   margin-bottom: 5px;
 }
 
-.doctor-info p {
-  font-size: 0.9rem;
-  opacity: 0.8;
+.doc-exp {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  opacity: 1;
+}
+
+.doctor-card:hover .doc-exp, .doctor-card.active .doc-exp {
+  color: white;
 }
 
 @media (max-width: 1200px) {
-  .doctors-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .doctor-card {
+    width: 380px;
   }
 }
 

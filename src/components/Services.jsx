@@ -1,9 +1,9 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import './Services.css';
-import s1 from '../assets/gallery1.png';
-import s2 from '../assets/gallery2.png';
-import s3 from '../assets/hero.png';
+import s1 from '../assets/about3.jpg';
+import s2 from '../assets/about2.jpg';
+import s3 from '../assets/dr_ravi.jpg';
 
 const Services = () => {
   return (
@@ -20,23 +20,23 @@ const Services = () => {
       <div className="services-grid">
         <div className="service-card glass">
           <div className="service-info">
-            <h3>5D Digital Scanning</h3>
-            <p>Chhattisgarh's first 5D Itero scanner for precise 3D digital impressions and smile simulations.</p>
+            <h3>Advanced Dental Implants</h3>
+            <p>Specialized implant procedures for permanent tooth replacement with 28 years of surgical expertise.</p>
             <div className="service-arrow"><ArrowUpRight size={20} /></div>
           </div>
           <div className="service-image">
-            <img src={s1} alt="5D Digital Scanning" />
+            <img src={s1} alt="Advanced Dental Implants" />
           </div>
         </div>
         
         <div className="service-card glass">
           <div className="service-info">
-            <h3>Laser Dentistry</h3>
-            <p>Advanced laser precision for pain-free RCT, gum treatments, and aesthetic surgery.</p>
+            <h3>Laser & Cosmetic Care</h3>
+            <p>Painless RCT, laser gum treatments, and aesthetic smile enhancements by MDS experts.</p>
             <div className="service-arrow"><ArrowUpRight size={20} /></div>
           </div>
           <div className="service-image">
-            <img src={s2} alt="Laser Dentistry" />
+            <img src={s2} alt="Laser & Cosmetic Care" />
           </div>
         </div>
         

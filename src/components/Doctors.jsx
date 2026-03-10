@@ -1,32 +1,33 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import './Doctors.css';
-import dr1 from '../assets/dr_prateek.png';
-import dr2 from '../assets/dr2.png';
-import dr3 from '../assets/hero.png'; // Reusing hero as a doctor
-import dr4 from '../assets/consultation.png'; // Reusing consultation as a doctor
+import dr1 from '../assets/dr_ravi.jpg';
+import dr2 from '../assets/dr_anandita.jpg';
 
 const Doctors = () => {
   const doctors = [
-    { name: "Dr. Prateek G Gupta", specialty: "Cosmetic Dentist & Oral Surgeon", img: dr1, active: true },
-    { name: "Specialized Staff", specialty: "Laser RCT Expert", img: dr2 },
-    { name: "Digital Associate", specialty: "Itero Scan Specialist", img: dr3 },
-    { name: "Care Coordinator", specialty: "Patient Experience", img: dr4 }
+    {
+      name: "Dr. Ravi Malik",
+      specialty: "MDS - Prosthodontics & Implantologist",
+      experience: "31+ Years",
+      img: dr1
+    },
+    {
+      name: "Dr. Anandita Malik",
+      specialty: "BDS - Dentist, Cosmetic/Aesthetic Dentist",
+      experience: "29+ Years",
+      img: dr2
+    }
   ];
 
   return (
     <section id="doctors" className="doctors-section container">
       <div className="doctors-header">
-        <h2 className="section-title">Meet Our Experts Doctors</h2>
-        <p className="section-subtitle">Find Industry Experts</p>
-        
-        <div className="carousel-controls">
-          <button className="carousel-btn prev"><ChevronLeft size={20} /></button>
-          <button className="carousel-btn next"><ChevronRight size={20} /></button>
-        </div>
+        <h2 className="section-title">Meet Our Expert Doctors</h2>
+        <p className="section-subtitle">28+ Years of Clinical Excellence in Shanker Nagar</p>
       </div>
-      
-      <div className="doctors-grid">
+
+      <div className="doctors-grid central-grid">
         {doctors.map((doc, index) => (
           <div key={index} className={`doctor-card ${doc.active ? 'active' : ''}`}>
             <div className="doctor-image">
@@ -37,7 +38,8 @@ const Doctors = () => {
             </div>
             <div className="doctor-info">
               <h3>{doc.name}</h3>
-              <p>{doc.specialty}</p>
+              <p className="doc-specialty">{doc.specialty}</p>
+              <p className="doc-exp">{doc.experience} Experience</p>
             </div>
           </div>
         ))}

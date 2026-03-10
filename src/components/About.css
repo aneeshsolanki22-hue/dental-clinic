@@ -35,8 +35,8 @@
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 180px);
-  gap: 20px;
+  grid-template-rows: 200px 200px;
+  gap: 15px;
 }
 
 .gallery-item {
@@ -61,7 +61,6 @@
 .item-3 { grid-column: span 1; }
 .item-4 { grid-column: span 1; }
 .item-5 { grid-column: span 1; }
-.item-6 { grid-column: span 1; }
 
 @media (max-width: 992px) {
   .about-section {

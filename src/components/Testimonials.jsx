@@ -1,45 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import './Testimonials.css';
-import p1 from '../assets/patient1.png';
-import p2 from '../assets/patient2.png';
-import p3 from '../assets/patient3.png';
-import p4 from '../assets/patient4.png';
-import p5 from '../assets/patient5.png';
-
 const Testimonials = () => {
   const reviews = [
     {
       name: "Amit S.",
       role: "Verified Patient",
-      text: "The 5D scanner and laser RCT experience at Hi-Tech was amazing. Dr. Prateek explained everything digitally before starting. Highly recommended in Raipur!",
-      img: p1
+      text: "The dental implant procedure at Malik Dental Clinic was truly professional. Dr. Ravi Malik's 31 years of experience is evident in his expertise. Highly recommended in Shanker Nagar!",
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
     },
     {
       name: "Sriya P.",
       role: "Verified Patient",
-      text: "I was scared of dental visits, but the laser treatment here was absolutely painless. The clinic's hygiene and tech are top-notch.",
-      img: p2
+      text: "I was looking for a specialized prosthodontist, and Dr. Ravi Malik provided excellent care for my bridge treatment. The clinic environment is very comfortable.",
+      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
     },
     {
       name: "Rajesh K.",
       role: "Verified Patient",
-      text: "Digital smile designing changed my confidence. Best cosmetic dental care in Chhattisgarh. Staff is very cooperative and professional.",
-      img: p3
+      text: "Expert implantologist and a very helpful team. My smile restoration was handled with great precision. The best cosmetic dental care in Raipur.",
+      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80"
     },
     {
       name: "Neha V.",
       role: "Verified Patient",
-      text: "Quick and efficient service. The Itero scan was so much better than traditional moulds. Truly a hi-tech experience as the name suggests!",
-      img: p4
+      text: "Quick and efficient service. Dr. Malik's consultation was very thorough, and he explained all implant options clearly. Truly value his experience!",
+      img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
     },
     {
       name: "Vikram R.",
       role: "Verified Patient",
-      text: "Highly skilled doctors and very reasonable costs for the advanced technology they use. My family's go-to dental clinic now.",
-      img: p5
+      text: "Highly skilled MDS doctor and very reasonable costs for such specialized treatments. Shanker Nagar's most trusted dental clinic.",
+      img: "https://images.unsplash.com/photo-1531123897727-8f129e16fd3c?auto=format&fit=crop&w=150&q=80"
     }
   ];
+
+  const ITEMS_PER_PAGE = 3;
+  const [page, setPage] = useState(0);
+  const totalPages = Math.ceil(reviews.length / ITEMS_PER_PAGE);
+  const visible = reviews.slice(page * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE + ITEMS_PER_PAGE);
 
   return (
     <section id="testimonials" className="testimonials-section container">
@@ -48,12 +47,12 @@ const Testimonials = () => {
         <p className="section-subtitle">
           Authentic Experiences Shared By Real Patients Who Found Healing, 
           Comfort, And Trust Through Our Expert Care — Transforming Lives, 
-          One Treatment At A Time at Hi-Tech Dental Care.
+          One Treatment At A Time at Malik Dental Clinic.
         </p>
       </div>
       
       <div className="testimonials-grid">
-        {reviews.map((rev, index) => (
+        {visible.map((rev, index) => (
           <div key={index} className="testimonial-card glass">
             <p className="testimonial-text">"{rev.text}"</p>
             <div className="testimonial-footer">
@@ -71,10 +70,17 @@ const Testimonials = () => {
       </div>
       
       <div className="testimonial-pagination">
-        <button className="page-btn prev"><ChevronLeft size={18} /></button>
-        <button className="page-btn active">1</button>
-        <button className="page-btn">2</button>
-        <button className="page-btn next"><ChevronRight size={18} /></button>
+        <button className="page-btn prev" onClick={() => setPage(p => Math.max(0, p - 1))} disabled={page === 0}>
+          <ChevronLeft size={18} />
+        </button>
+        {Array.from({ length: totalPages }).map((_, i) => (
+          <button key={i} className={`page-btn ${page === i ? 'active' : ''}`} onClick={() => setPage(i)}>
+            {i + 1}
+          </button>
+        ))}
+        <button className="page-btn next" onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))} disabled={page === totalPages - 1}>
+          <ChevronRight size={18} />
+        </button>
       </div>
     </section>
   );
